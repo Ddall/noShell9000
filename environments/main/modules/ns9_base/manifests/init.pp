@@ -1,5 +1,5 @@
 class ns9_base{
-  $tools  =   [
+  $tools = [
     'git',
 
     'build-essential',
@@ -33,7 +33,6 @@ class ns9_base{
   file{ '/usr/sbin/ftponly':
     ensure  =>  link,
     target  =>  '/usr/sbin/nologin',
-
   }->
   file_line{ '/etc/shells':
     ensure  =>  present,

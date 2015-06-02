@@ -1,5 +1,4 @@
 
-
 class ns9_firewall::pre{
     Firewall {
         require => undef,

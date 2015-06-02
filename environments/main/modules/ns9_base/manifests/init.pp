@@ -22,7 +22,7 @@ class ns9_base{
   ensure_packages($tools)
 
   # Librarian puppet
-  exec{'install librarian':
+  exec{'librarian':
     command => '/usr/bin/gem install librarian-puppet',
     user => 'root',
     cwd => '/etc/puppet',

@@ -64,7 +64,7 @@ class ns9_base{
   file{'/usr/local/sbin/ns9-puppet-apply':
     ensure => present,
     mode   => 700,
-    source => 'puppet:///modules/ns9_base/files/ns9-puppet-apply.sh'
+    source => 'puppet:///modules/prod_plan/ns9-puppet-apply.sh'
   }
 
   # Puppet apply cron

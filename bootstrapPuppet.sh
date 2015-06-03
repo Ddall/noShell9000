@@ -26,4 +26,4 @@ git branch --set-upstream-to=origin/master master
 
 librarian-puppet install
 
-bash /etc/puppet/manifest/ns9_base/files/ns9-puppet-apply.sh
+bash /etc/puppet/environments/main/modules/ns9_base/files/ns9-puppet-apply.sh

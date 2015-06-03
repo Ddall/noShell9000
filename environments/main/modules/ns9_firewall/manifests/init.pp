@@ -2,21 +2,21 @@ class ns99_firewall{
   require firewall
 
   # DO NOT CHANGE THE ORDER OF THIS
-  stage { 'prod_firewall_pre':  before  => Stage['main']; }
-  stage { 'prod_firewall_post': require => Stage['main']; }
+  stage { 'ns9_firewall_pre':  before  => Stage['main']; }
+  stage { 'ns9_firewall_post': require => Stage['main']; }
 
   class { 'firewall':
-    stage => 'prod_firewall_pre',
+    stage => 'ns9_firewall_pre',
   }
 
   # rules
-  class { 'prod_firewall::pre':
-    stage => 'prod_firewall_pre',
+  class { 'ns9_firewall::pre':
+    stage => 'ns9_firewall_pre',
   }
 
   # deny all the rest
-  class { 'prod_firewall::post':
-    stage => 'prod_firewall_post',
+  class { 'ns9_firewall::post':
+    stage => 'ns9_firewall_post',
   }
 
   resources { "firewall":

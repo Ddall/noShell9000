@@ -1,5 +1,4 @@
 class ns9_firewall{
-  require firewall
 
   # DO NOT CHANGE THE ORDER OF THIS
   stage { 'ns9_firewall_pre':  before  => Stage['main']; }

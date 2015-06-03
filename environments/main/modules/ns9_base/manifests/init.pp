@@ -76,7 +76,7 @@ class ns9_base{
   cron {  'puppet_apply':
     command     =>  '/usr/local/sbin/ns9-puppet-apply >> /var/log/puppet/apply.log 2> /var/log/puppet/apply.error.log',
     user        =>  'root',
-    minute      =>  [0,15,30,45],
+    minute      =>  [20,50],
     hour        =>  absent,
   }
 

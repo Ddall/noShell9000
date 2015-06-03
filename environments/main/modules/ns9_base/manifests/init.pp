@@ -61,9 +61,23 @@ class ns9_base{
   }
 
   # Scripts
-  file{'/local/sbin/ns9-puppet-apply':
+  file{'/usr/local/sbin/ns9-puppet-apply':
     ensure => present,
     mode   => 700,
     source => 'puppet:///modules/ns9_base/files/ns9-puppet-apply.sh'
   }
+
+  # Puppet apply cron
+  file{'/var/log/puppet':
+    ensure      => directory,
+    mode        => '755'
+  }->
+
+  cron {  'puppet_apply':
+    command     =>  '/usr/local/sbin/ns9-puppet-apply >> /var/log/puppet/apply.log 2> /var/log/puppet/apply.error.log',
+    user        =>  'root',
+    minute      =>  [0,15,30,45],
+    hour        =>  absent,
+  }
+
 }

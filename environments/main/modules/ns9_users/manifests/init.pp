@@ -3,6 +3,7 @@ class ns9_users{
   user{"ddall":
     ensure => present,
     home => '/home/ddall',
+    shell => '/bin/bash', 
     managehome => true,
   }
 

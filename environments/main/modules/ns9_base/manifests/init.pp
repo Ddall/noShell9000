@@ -50,7 +50,7 @@ class ns9_base{
     match   => '^#force_color_prompt=yes$',
   }
 
-# refresh roots .bashrc
+  # refresh roots .bashrc
   file { '/root/.bashrc':
     ensure  => present,
   }->

@@ -3,7 +3,7 @@ class ns9_users{
   user{"ddall":
     ensure => present,
     home => '/home/ddall',
-    shell => '/bin/bash', 
+    shell => '/bin/bash',
     managehome => true,
   }
 
@@ -17,5 +17,12 @@ class ns9_users{
     ensure => present,
     line   => 'ddall ALL=(ALL) NOPASSWD: ALL',
     path   => '/etc/sudoers',
+  }
+
+  # refresh .bashrc
+  file_line { '/etc/skel/.bashrc':
+    path    => '/home/ddall/.bashrc',
+    line    => 'force_color_prompt=yes',
+    match   => '^#force_color_prompt=yes$',
   }
 }

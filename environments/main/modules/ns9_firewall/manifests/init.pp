@@ -1,4 +1,4 @@
-class ns99_firewall{
+class ns9_firewall{
   require firewall
 
   # DO NOT CHANGE THE ORDER OF THIS

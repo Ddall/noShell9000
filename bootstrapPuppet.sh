@@ -4,6 +4,7 @@ apt-get install ssh git wget build-essential ruby-dev -y
 gem install librarian-puppet
 
 sudo ssh-keygen -t rsa -b 2048 -N "" -f ~/.ssh/id_rsa
+passwd -l root
 
 #@docs:https://docs.puppetlabs.com/guides/install_puppet/install_debian_ubuntu.html
 cd /root

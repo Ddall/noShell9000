@@ -74,7 +74,7 @@ class ns9_base{
   # Puppet apply cron
   file{'/var/log/puppet':
     ensure      => directory,
-    mode        => '755'
+    mode        => 750
   }->
 
   cron {  'puppet_apply':

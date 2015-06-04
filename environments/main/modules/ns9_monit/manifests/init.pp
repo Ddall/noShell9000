@@ -15,7 +15,7 @@ class ns9_monit{
     ensure => present,
     source => 'puppet:///modules/ns9_monit/monitrc',
     notify => Service['monit'],
-    mode  =>  700,
+    mode  =>  600,
   }
 
 # conf.d

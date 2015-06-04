@@ -1,10 +1,5 @@
 class ns9_base_security{
-
-  file{'/etc/ssh/sshd_config':
-    ensure => present,
-
-  }
-
+  
   file { '/etc/ssh/sshd_config':
     owner   =>  'root',
     group   =>  'root',

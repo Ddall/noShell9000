@@ -21,6 +21,10 @@ class ns9_base{
 
   ensure_packages($tools)
 
+  package{'puppet':
+    ensure => latest,
+  }
+
   # Librarian puppet
   exec{'librarian':
     command => '/usr/bin/gem install librarian-puppet',

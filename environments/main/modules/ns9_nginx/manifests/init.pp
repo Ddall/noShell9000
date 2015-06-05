@@ -1,10 +1,5 @@
 class ns9_nginx{
-
-#  apt::ppa { 'ppa:nginx/development':
-#    ensure  =>  'present',
-#    options => []
-#
-#  }->
+  
   package{'nginx':
     ensure => latest,
   }
@@ -25,6 +20,19 @@ class ns9_nginx{
     source  =>  'puppet:///modules/ns9_nginx/nginx.conf',
     require => Package['nginx'],
     notify => Service['nginx'],
+  }
+
+  file{ '/etc/nginx/ssl':
+    ensure  => directory,
+    owner   => 'root',
+    group   => 'root',
+  }
+
+  # WWW Root
+  file{'/home/web':
+    ensure => 'directory',
+    owner => 'www-data',
+    group => 'www-data',
   }
 
   #Vhosts
@@ -56,13 +64,6 @@ class ns9_nginx{
     target  =>  '/etc/nginx/sites-available/cloud.mayo.ga',
     notify  =>  Service['nginx'],
     require => File['/etc/nginx/sites-enabled']
-  }
-
-
-  file{'/home/web':
-    ensure => 'directory',
-    owner => 'www-data',
-    group => 'www-data',
   }
 
 }

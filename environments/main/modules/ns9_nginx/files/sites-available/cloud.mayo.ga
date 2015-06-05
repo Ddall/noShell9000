@@ -13,7 +13,7 @@ server {
 #        ssl_certificate_key /etc/ssl/nginx/cloud.example.com.key;
 
         # Path to the root of your installation
-        root /home/web/owncloud;
+        root /home/web/owncloud/public;
 
         client_max_body_size 10G; # set max upload size
         fastcgi_buffers 64 4K;
@@ -32,7 +32,7 @@ server {
             access_log off;
         }
 
-        location ~ ^/(data|config|\.ht|db_structure\.xml|README) {
+        location ~ ^/(data|config|\.ht|db_structure\.xml|README|\.git) {
                 deny all;
         }
 

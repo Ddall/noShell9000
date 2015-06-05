@@ -1,5 +1,5 @@
 class ns9_nginx{
-  
+
   package{'nginx':
     ensure => latest,
   }

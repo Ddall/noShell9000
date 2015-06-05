@@ -1,16 +1,16 @@
 #server {
-#        listen 80;
-#        server_name cloud.mayo.ga;
-#        return 301 https://$server_name$request_uri;  # enforce https
-#}
+        listen 80;
+        server_name cloud.mayo.ga;
+        return 301 https://$server_name$request_uri;  # enforce https
+}
 
 server {
-        listen 80;
-#        listen 443 ssl;
+
+        listen 443 ssl;
         server_name cloud.mayo.ga;
 
-#        ssl_certificate /etc/ssl/nginx/cloud.example.com.crt;
-#        ssl_certificate_key /etc/ssl/nginx/cloud.example.com.key;
+        ssl_certificate /etc/ssl/nginx/cloud.mayo.ga.crt;
+        ssl_certificate_key /etc/ssl/nginx/cloud.mayo.ga.key;
 
         # Path to the root of your installation
         root /home/web/owncloud/public;

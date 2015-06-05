@@ -6,7 +6,6 @@ class ns9_owncloud{
     group => 'www-data',
   }
 
-
   #SSL
   exec { 'make ssl cert for cloud.mayo.ga':
     cwd     =>  "/etc/nginx",

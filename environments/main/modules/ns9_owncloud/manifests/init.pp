@@ -18,6 +18,10 @@ class ns9_owncloud{
     ensure => latest,
   }
 
+  package{'libreoffice-core':
+    ensure => latest,
+  }
+
   file{'/home/web/owncloud/data':
     ensure => directory,
     owner => 'www-data',

@@ -22,7 +22,7 @@ class ns9_nginx{
     owner   =>  'root',
     group   =>  'root',
     mode    =>  '644',
-    source  =>  'puppet:///modules/ns9_nginx/nginx/nginx.conf',
+    source  =>  'puppet:///modules/ns9_nginx/nginx.conf',
     require => Package['nginx'],
     notify => Service['nginx'],
   }
@@ -35,14 +35,14 @@ class ns9_nginx{
     group => root,
     mode => 755,
     recurse => true,
-    source => 'puppet:///modules/ns9_nginx/nginx/sites-available/',
+    source => 'puppet:///modules/ns9_nginx/sites-available/',
     notify => Service['nginx'],
   }
 
   file{'/etc/nginx/sites-enabled':
     ensure => directory
   }
-  
+
   # ENABLE SITES
   file { '/etc/nginx/sites-enabled/default':
     ensure  =>  link,

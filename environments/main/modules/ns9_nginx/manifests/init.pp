@@ -39,6 +39,10 @@ class ns9_nginx{
     notify => Service['nginx'],
   }
 
+  file{'/etc/nginx/sites-enabled':
+    ensure => directory
+  }
+  
   # ENABLE SITES
   file { '/etc/nginx/sites-enabled/default':
     ensure  =>  link,

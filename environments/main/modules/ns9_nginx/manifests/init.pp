@@ -2,7 +2,8 @@ class ns9_nginx{
 
   apt::ppa { 'ppa:nginx/development':
     ensure  =>  'present',
-    
+    options => []
+
   }->
   package{'nginx':
     ensure => latest,

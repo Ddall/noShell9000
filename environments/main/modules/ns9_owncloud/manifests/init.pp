@@ -14,4 +14,13 @@ class ns9_owncloud{
     notify  =>  Service['nginx'], # Restart service when file is changed
   }
 
+  cron{'owncloud cron':
+    ensure => present,
+    command => '/usr/bin/php /var/www/owncloud/cron.php',
+    user => 'www-data',
+    minute => '*/5',
+    hour => '*',
+
+  }
+
 }

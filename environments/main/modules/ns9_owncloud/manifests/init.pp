@@ -1,8 +1,9 @@
 class ns9_owncloud{
 
-#
-#  file{'/home/'
-#
-#  }
+  file{'/home/web/owncloud':
+    ensure => directory,
+    owner => 'www-data',
+    group => 'www-data',
+  }
 
 }

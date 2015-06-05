@@ -59,5 +59,10 @@ class ns9_nginx{
   }
 
 
+  file{'/home/web':
+    ensure => 'directory',
+    owner => 'www-data',
+    group => 'www-data',
+  }
 
 }

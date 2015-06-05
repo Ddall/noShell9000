@@ -1,6 +1,17 @@
 class ns9_nginx{
-  #@see https://forge.puppetlabs.com/jfryman/nginx
-  class { 'nginx':
-    
+
+  apt::ppa { 'ppa:nginx/development': }
+
+  package{'nginx':
+    ensure => latest,
   }
+
+  service{'nginx':
+    ensure => 'running',
+    enable => true,
+    hasrestart => true,
+    hasstatus => true,
+  }
+  
+
 }

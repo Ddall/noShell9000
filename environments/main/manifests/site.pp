@@ -9,3 +9,7 @@ include ns9_fail2ban
 include ns9_phpfpm
 include ns9_nginx
 include ns9_monit
+include ns9_mysql
+
+# Services
+incldue ns9_owncloud

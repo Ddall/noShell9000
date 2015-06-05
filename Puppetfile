@@ -1,6 +1,5 @@
 forge " https://forgeapi.puppetlabs.com"
 
-mod 'puppetlabs/apt'
 mod 'puppetlabs/ntp'
 mod 'puppetlabs/mysql'
 mod 'puppetlabs/rsync'

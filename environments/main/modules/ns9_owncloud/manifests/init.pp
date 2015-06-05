@@ -4,7 +4,28 @@ class ns9_owncloud{
     ensure => directory,
     owner => 'www-data',
     group => 'www-data',
+
   }
+
+  file{'/home/web/owncloud/public':
+    ensure => directory,
+    owner => 'www-data',
+    group => 'www-data',
+    require => File['/home/web/owncloud']
+  }
+
+  package{'mailutils':
+    ensure => latest,
+  }
+
+  file{'/home/web/owncloud/data':
+    ensure => directory,
+    owner => 'www-data',
+    group => 'www-data',
+    mode  => 770,
+    require => File['/home/web/owncloud']
+  }
+
 
   #SSL
   exec { 'make ssl cert for cloud.mayo.ga':

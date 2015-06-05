@@ -8,8 +8,8 @@ include ns9_fail2ban
 # Base base services
 include ns9_phpfpm
 include ns9_nginx
-include ns9_monit
 include ns9_mysql
+include ns9_monit
 
 # Services
 incldue ns9_owncloud

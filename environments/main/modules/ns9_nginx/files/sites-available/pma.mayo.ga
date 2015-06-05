@@ -1,0 +1,52 @@
+server {
+    listen         80;
+    server_name    pma.mayo.ga;
+    return         301 https://$server_name$request_uri;
+}
+
+server {
+
+    listen 443 ssl;
+    ssl_certificate /etc/nginx/ssl/pma.mayo.ga.crt;
+    ssl_certificate_key /etc/nginx/ssl/pma.mayo.ga.key;
+    server_name pma.mayo.ga;
+    
+    
+    root /usr/share/phpmyadmin;
+    index index.php index.html index.htm;
+    
+    
+    location ~ .php$ {
+        root /usr/share/phpmyadmin;
+        
+        location ~ ^/(.+\.php)$ {
+            try_files $uri =404;
+            fastcgi_pass unix:/var/run/php5-fpm.sock;
+
+	        error_log /var/log/nginx/pma.resomedia-error.log;
+            access_log /var/log/nginx/pma.resomedia-access.log;
+
+            fastcgi_index index.php;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            include /etc/nginx/fastcgi_params;
+            fastcgi_read_timeout 600;
+        }
+
+    }
+    
+    location ~* ^/(.+\.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt))$ {
+        root /usr/share/phpmyadmin;
+        expires 30d;
+    }
+    
+    # Logging
+    error_log /var/log/nginx/pma.mayo.ga-error.log;
+    
+    # this prevents hidden files (beginning with a period) from being served
+    location ~ /\. {
+        access_log on;
+        log_not_found on;
+        deny all;
+    }
+
+}

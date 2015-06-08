@@ -27,6 +27,18 @@ class ns9_logrotate{
     shred           =>  true,
   }
 
+    # NGINX
+  logrotate::rule { 'nginx_logs':
+    ensure          =>  present,
+    path            =>  '/var/log/nginx/*.log',
+    rotate          =>  7,
+    rotate_every    =>  'day',
+    compress        =>  true,
+    ifempty         =>  false,
+    missingok       =>  true,
+    shred           =>  true,
+    postrotate      =>  '[ ! -f /var/run/nginx.pid ] || kill -USR1 `cat /var/run/nginx.pid`',
+  }
 
 
 }

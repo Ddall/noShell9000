@@ -47,7 +47,7 @@ class ns9_owncloud{
 
   cron{'owncloud cron':
     ensure => present,
-    command => '/usr/bin/php /var/www/owncloud/cron.php',
+    command => '/usr/bin/php /home/web/owncloud/public/cron.php',
     user => 'www-data',
     minute => '*/5',
     hour => '*',

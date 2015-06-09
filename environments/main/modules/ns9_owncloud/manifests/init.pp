@@ -27,9 +27,15 @@ class ns9_owncloud{
     owner => 'www-data',
     group => 'www-data',
     mode  => 770,
-    require => File['/home/web/owncloud']
+    require => File['/usr/bin/sudo']
   }
 
+  exec{'clone owncloud':
+    cwd     => '/usr/bin/sudo',
+    command => '/usr/bin/sudo -u www-data /bin/bash /etc/puppet/environments/main/modules/ns9_owncloud/files/owncloud_install.sh',
+    creates => '/home/web/owncloud/public/index.php',
+    require => File['/home/web/owncloud']
+  }
 
   #SSL
   exec { 'make ssl cert for cloud.mayo.ga':

@@ -65,7 +65,7 @@ class ns9_owncloud{
     notifempty      =>  true,
     create          =>  true,
     create_owner    =>  'www-data',
-    create_mode     =>  'www-data',
+    create_group    =>  'www-data',
     create_mode     =>  '640',
   }
 

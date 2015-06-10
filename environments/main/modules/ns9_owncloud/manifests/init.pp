@@ -62,7 +62,7 @@ class ns9_owncloud{
     compress        =>  true,
     shred           =>  true,
     missingok       =>  true,
-    notifempty      =>  true,
+    ifempty         =>  false,
     create          =>  true,
     create_owner    =>  'www-data',
     create_group    =>  'www-data',

@@ -17,7 +17,8 @@ class ns9_fail2ban{
   logpath  = /var/www/owncloud/data/owncloud.log
   maxretry = 6
         ',
-      },
+      }
+    }
 
   }
 

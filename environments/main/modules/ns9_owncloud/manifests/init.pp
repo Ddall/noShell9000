@@ -51,7 +51,22 @@ class ns9_owncloud{
     user => 'www-data',
     minute => '*/5',
     hour => '*',
+  }
 
+  ## Housekeeping
+  logrotate::rule { 'owncloud':
+    ensure          =>  present,
+    path            =>  '/home/web/owncloud/data/owncloud.log',
+    rotate          =>  2,
+    rotate_every    =>  'day',
+    compress        =>  true,
+    shred           =>  true,
+    missingok       =>  true,
+    notifempty      =>  true,
+    create          =>  true,
+    create_owner    =>  'www-data',
+    create_mode     =>  'www-data',
+    create_mode     =>  '640',
   }
 
 }

@@ -13,3 +13,4 @@ include ns9_monit
 
 # Services
 include ns9_owncloud
+include ns9_openvpn

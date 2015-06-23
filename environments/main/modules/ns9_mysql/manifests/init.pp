@@ -9,7 +9,6 @@ class ns9_mysql {
         'query_cache_type' => 1,
         'query_cache_size' => '256M',
         'query_cache_limit' => '2M',
-        'query_cache_strip_comments' => 1,
       }
     },
     databases => {

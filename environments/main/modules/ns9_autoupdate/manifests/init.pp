@@ -3,19 +3,19 @@ class ns9_autoupdate{
   package{'unattended-upgrades':
     ensure => latest,
   }
-  file_line { 'enable unattended upgrades':
-    ensure => present,
-    line   => '      "${distro_id}:${distro_codename}-updates";',
-    match  => '//      "${distro_id}:${distro_codename}-updates";',
-    path   => '/etc/apt/apt.conf.d/50unattended-upgrades',
-  }
+  # file_line { 'enable unattended upgrades':
+    # ensure => present,
+    # line   => '      "${distro_id}:${distro_codename}-updates";',
+    # match  => '//      "${distro_id}:${distro_codename}-updates";',
+    # path   => '/etc/apt/apt.conf.d/50unattended-upgrades',
+  # }
 
-  file_line { 'enable security updates':
-    ensure => present,
-    line   => '      "${distro_id}:${distro_codename}-security"";',
-    match  => '//      "${distro_id}:${distro_codename}-security"";',
-    path   => '/etc/apt/apt.conf.d/50unattended-upgrades',
-  }
+  # file_line { 'enable security updates':
+    # ensure => present,
+    # line   => '      "${distro_id}:${distro_codename}-security"";',
+    # match  => '//      "${distro_id}:${distro_codename}-security"";',
+    # path   => '/etc/apt/apt.conf.d/50unattended-upgrades',
+  # }
 
 
   file_line { 'enable auto reboot':

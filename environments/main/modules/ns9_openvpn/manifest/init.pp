@@ -7,13 +7,8 @@ class ns9_openvpn{
     # server       => '10.200.200.0 255.255.255.0',
   # }
 
-  ## define clients
-  # openvpn::client { 'ddglx':
-    # server => 'winterthur',
-  # }
-  # openvpn::client_specific_config { 'client1':
-    # server => 'winterthur',
-    # ifconfig => '10.200.200.50 10.200.200.51',
-  # }
+  package{'openvpn':
+    ensure  => latest,
+  }
 
 }

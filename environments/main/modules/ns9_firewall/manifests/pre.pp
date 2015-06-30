@@ -33,7 +33,7 @@ class ns9_firewall::pre{
     }
     
     # Allow HTTP
-    firewall { '102 allow http access':
+    firewall { '101 allow http access':
         port   => '80',
         proto  => tcp,
         action => accept,
@@ -42,6 +42,13 @@ class ns9_firewall::pre{
     # Allow HTTPS
     firewall { '102 allow https access':
         port   => '443',
+        proto  => tcp,
+        action => accept,
+    }
+
+    # Allow OpenVPN SA
+    firewall { '103 allow ovpnsa access':
+        port   => '943',
         proto  => tcp,
         action => accept,
     }

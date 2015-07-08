@@ -44,6 +44,9 @@ class ns9_phpfpm{
       php_admin_value        => {
         'max_execution_time' => '300',
       },
+      env                    => {
+        'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+      },
     }->
 
     file{ '/etc/php5/fpm/php.ini' :

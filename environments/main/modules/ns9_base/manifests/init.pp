@@ -7,6 +7,7 @@ class ns9_base{
     'zlib1g-dev',
     'libpcre3',
     'libpcre3-dev',
+    'memcached',
 
     'openssl',
     'zip',

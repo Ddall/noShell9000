@@ -2,6 +2,7 @@ class ns9_phpfpm{
 
     $optionnal_pkgs = [
       'php5-apcu',
+      'php-apc',
       'php5-mcrypt',
       'php5-memcached',
       'php5-mysql',

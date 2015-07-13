@@ -1,7 +1,7 @@
 class ns9_base{
   $tools = [
     'git',
-
+    'clamav',
     'build-essential',
     'ruby-dev',
     'zlib1g-dev',

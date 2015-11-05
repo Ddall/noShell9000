@@ -12,6 +12,8 @@ include ns9_nginx
 include ns9_mysql
 include ns9_monit
 
+ns9_cron
+
 # Services
 include ns9_owncloud
 include ns9_smartrobot

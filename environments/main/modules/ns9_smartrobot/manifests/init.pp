@@ -7,7 +7,7 @@ class ns9_smartrobot{
   }
 
   exec{'clone smartrobot':
-    cwd     => '/home/web/SmartRobot',
+    cwd     => '/home/web',
     command => '/usr/bin/sudo -u www-data /bin/bash /etc/puppet/environments/main/modules/ns9_smartrobot/files/smartrobot_install.sh',
     creates => '/home/web/SmartRobot/app/console',
     require => File['/home/web/SmartRobot']

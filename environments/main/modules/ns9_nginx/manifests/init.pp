@@ -66,4 +66,11 @@ class ns9_nginx{
     require => File['/etc/nginx/sites-enabled']
   }
 
+  file { '/etc/nginx/sites-enabled/smartbot.mayo.ga':
+    ensure  =>  link,
+    target  =>  '/etc/nginx/sites-available/smartbot.mayo.ga',
+    notify  =>  Service['nginx'],
+    require => File['/etc/nginx/sites-enabled']
+  }
+
 }

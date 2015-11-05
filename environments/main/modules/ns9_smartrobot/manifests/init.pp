@@ -25,7 +25,7 @@ class ns9_smartrobot{
     ensure => present,
     command => '/usr/bin/php /home/web/SmartRobot/app/console markets:refresh',
     user => 'www-data',
-    minute => '*/1',
+    minute => '*/2',
     hour => '*',
   }
 

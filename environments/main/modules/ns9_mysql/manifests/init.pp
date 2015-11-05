@@ -16,6 +16,10 @@ class ns9_mysql {
         ensure  => present,
         charset => 'utf8',
       },
+      'smartrobot' => {
+        ensure  => present,
+        charset => 'utf8',
+      },
     },
     users => {
       'ns9_ow@localhost'    => {
@@ -26,6 +30,14 @@ class ns9_mysql {
         max_user_connections     => '0',
         password_hash            => '*3B9B2465C3079282ED2FDF05AF90F10ED289A307',
       },
+      'ns9_ddxsr@localhost'    => {
+        ensure                   => present,
+        max_connections_per_hour => '0',
+        max_queries_per_hour     => '0',
+        max_updates_per_hour     => '0',
+        max_user_connections     => '0',
+        password_hash            => '*6B2C484071F8146760C22707B879D65B265202D5',
+      },
 
     },
     grants => {
@@ -34,6 +46,12 @@ class ns9_mysql {
         privileges => ['ALL PRIVILEGES'],
         table      => 'owncloud.*',
         user       => 'ns9_ow@localhost',
+      },
+      'ns9_ddxsr@localhost/smartrobot.*' => {
+        ensure     => present,
+        privileges => ['ALL PRIVILEGES'],
+        table      => 'smartrobot.*',
+        user       => 'ns9_ddxsr@localhost',
       },
 
     }

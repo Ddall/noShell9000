@@ -54,4 +54,12 @@ class ns9_phpfpm{
       source  =>  'puppet:///modules/ns9_phpfpm/php.ini',
     }
 
+
+  # install composer
+  exec { 'install composer':
+    cwd     =>  "/usr/local/bin",
+    command =>  '/usr/bin/curl -sS https://getcomposer.org/installer | /usr/bin/php',
+    creates =>  "/usr/local/bin/composer.phar",
+  }
+
 }

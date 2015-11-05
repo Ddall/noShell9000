@@ -30,7 +30,7 @@ class ns9_smartrobot{
   }
 
   ## Housekeeping
-  logrotate::rule { 'smartbot logs':
+  logrotate::rule { 'smartbotlogs':
     ensure          =>  present,
     path            =>  '/home/web/smartrobot/app/logs/*.log',
     rotate          =>  2,

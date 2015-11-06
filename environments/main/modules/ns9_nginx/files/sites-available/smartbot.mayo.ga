@@ -18,7 +18,7 @@ server {
 		try_files $uri /app.php$is_args$args;
 	}
 	
-	root /home/web/SmartRobot/web
+	root /home/web/SmartRobot/web;
 
 	# DEV
 	# This rule should only be placed on your development environment

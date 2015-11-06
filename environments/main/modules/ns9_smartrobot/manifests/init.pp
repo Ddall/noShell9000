@@ -13,6 +13,7 @@ class ns9_smartrobot{
     require => File['/home/web/SmartRobot']
   }
 
+
   #SSL
   exec { 'make ssl cert for smartbot.mayo.ga':
     cwd     =>  "/etc/nginx",

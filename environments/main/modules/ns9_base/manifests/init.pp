@@ -18,7 +18,8 @@ class ns9_base{
     'tar',
     'htop',
     'acl',
-    'nodejs'
+    'nodejs',
+    'npm'
   ]
 
   ensure_packages($tools)

@@ -24,10 +24,9 @@ class ns9_smartrobot{
 
   cron{'smartbot cron':
     ensure => present,
-    command => '/usr/bin/php /home/web/SmartRobot/app/console',
-#    command => '/usr/bin/php /home/web/SmartRobot/app/console markets:refresh',
+    command => '/usr/bin/php /home/web/SmartRobot/app/console markets:refresh',
     user => 'www-data',
-    minute => '*/30',
+    minute => '*/2',
     hour => '*',
   }
 

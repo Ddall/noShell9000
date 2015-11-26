@@ -4,18 +4,18 @@ upstream php-handler {
 
 server {
     listen 80;
-    server_name cloud.mayo.ga;
+    server_name cloud.hexadec.net;
     return 301 https://$server_name$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name cloud.mayo.ga;
+    server_name cloud.hexadec.net;
 
-    ssl_certificate /etc/nginx/ssl/cloud.mayo.ga.crt;
-    ssl_certificate_key /etc/nginx/ssl/cloud.mayo.ga.key;
+    ssl_certificate /etc/nginx/ssl/cloud.hexadec.net.crt;
+    ssl_certificate_key /etc/nginx/ssl/cloud.hexadec.net.key;
 
-    error_log /var/log/nginx/cloud.mayo.ga-error.log;
+    error_log /var/log/nginx/cloud.hexadec.net-error.log;
 
     # Add headers to serve security related headers
     add_header Strict-Transport-Security "max-age=15768000; includeSubDomains; preload;";

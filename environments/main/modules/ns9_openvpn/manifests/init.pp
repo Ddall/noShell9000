@@ -1,9 +1,9 @@
 class ns9_openvpn{
 
-  # openvpn::server { 'mayo':
+  # openvpn::server { 'hexadec':
     # country      => 'INTERNET',
-    # organization => 'mayo.ga',
-    # email        => 'root@mayo.ga',
+    # organization => 'hexadec.net',
+    # email        => 'root@hexadec.net',
     # server       => '10.200.200.0 255.255.255.0',
   # }
 

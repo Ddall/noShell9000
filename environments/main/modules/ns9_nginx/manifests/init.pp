@@ -59,16 +59,16 @@ class ns9_nginx{
     require => File['/etc/nginx/sites-enabled']
   }
 
-  file { '/etc/nginx/sites-enabled/cloud.mayo.ga':
+  file { '/etc/nginx/sites-enabled/cloud.hexadec.net':
     ensure  =>  link,
-    target  =>  '/etc/nginx/sites-available/cloud.mayo.ga',
+    target  =>  '/etc/nginx/sites-available/cloud.hexadec.net',
     notify  =>  Service['nginx'],
     require => File['/etc/nginx/sites-enabled']
   }
 
-  file { '/etc/nginx/sites-enabled/smartbot.mayo.ga':
+  file { '/etc/nginx/sites-enabled/smartbot.hexadec.net':
     ensure  =>  link,
-    target  =>  '/etc/nginx/sites-available/smartbot.mayo.ga',
+    target  =>  '/etc/nginx/sites-available/smartbot.hexadec.net',
     notify  =>  Service['nginx'],
     require => File['/etc/nginx/sites-enabled']
   }

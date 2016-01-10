@@ -19,6 +19,12 @@ class ns9_users{
     key  => 'AAAAB3NzaC1yc2EAAAABJQAAAIEAoRLd705AdzuG8xr+HC9nwCIJeOanwEBL3WLnqDDZyNIeUQAaNZqu66MHvnJ6FLAPWAVmCYFUXd4w9Qb0nrVdD62iq3U2Hn01WP3/JX/LjTQXm6kczbSRbFiMqMG+6X9PeVYQteqfGm0qpd0XAFKu521iOY3XIBUCKGbWJ4aZrVk=',
   }
 
+  ssh_authorized_key { 'ddx-vm-01':
+    user => 'ddall',
+    type => 'ssh-rsa',
+    key  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCwFnSLx2A+IKHoAx+h/wzg0NlQBACVLHSxPa2plMusSVU/SDv8+TB6hQwSEhwtfYYH+rpOcXwRHUA8PV4AVxeqdCoRZ+G+aMejBRMHXmjQYMQQ5IDvUYaWKyb3LfJFCFCOKoJy8VXVEE9osC8EsX68MmLBjsaZJTH4gZruPknyEJNgv4/twU2sZ3ytCHFkyRgJeGRoN9v5FNlexXO4pWMbIY06NlIDPeSRDx8ZkX5IvUDcjl68ofsInyA1uFDq8d6AMTQ3EvoePqxMWIstdkFks393SYwNEFJPllzfMSAD65VBs/yJTYJWzeyvts2nYwRvh22iZhKAzg73bQzbjdF3',
+  }
+
 #  ssh_authorized_key { 'ddx-perso':
 #    user => 'ddall',
 #    type => 'ssh-rsa',

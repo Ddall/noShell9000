@@ -64,7 +64,7 @@ class ns9_mysql {
         table      => 'smartrobot.*',
         user       => 'ns9_ddxsr@localhost',
       },
-      'ns9_event@localhost/smartrobot.*' => {
+      'ns9_event@localhost/event.*' => {
         ensure     => present,
         privileges => ['ALL PRIVILEGES'],
         table      => 'event.*',

@@ -73,4 +73,11 @@ class ns9_nginx{
     require => File['/etc/nginx/sites-enabled']
   }
 
+  file { '/etc/nginx/sites-enabled/event.hexadec.net':
+    ensure  =>  link,
+    target  =>  '/etc/nginx/sites-available/event.hexadec.net',
+    notify  =>  Service['nginx'],
+    require => File['/etc/nginx/sites-enabled']
+  }
+
 }

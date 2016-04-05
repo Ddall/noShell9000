@@ -9,4 +9,4 @@ mod 'Slashbunny/phpfpm'
 mod 'rodjek/logrotate'
 mod 'maestrodev/wget'
 mod 'dhoppe/fail2ban'
-mod 'danzilio/letsencrypt'
+

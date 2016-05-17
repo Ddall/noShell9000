@@ -9,6 +9,7 @@ class ns9_mysql {
         'query_cache_type' => 1,
         'query_cache_size' => '256M',
         'query_cache_limit' => '2M',
+        'datadir'   => '/home/mysql',
       }
     },
     databases => {
@@ -71,6 +72,13 @@ class ns9_mysql {
         user       => 'ns9_event@localhost',
       },
     }
+  }
+
+
+  file{ '/home/mysql':
+    ensure  => directory,
+    owner   => 'mysql',
+    group   => 'mysql',
   }
 
 }

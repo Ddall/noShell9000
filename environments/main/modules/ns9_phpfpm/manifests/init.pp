@@ -1,28 +1,28 @@
 class ns9_phpfpm{
 
     $optionnal_pkgs = [
-      'php5-apcu',
-      'php-apc',
-      'php5-mcrypt',
-      'php5-memcached',
-      'php5-mysql',
-      'php5-cli',
-      'php5-curl',
-      'php5-gd',
-      'php5-json',
-      'php5-intl',
+      'php7.0-mcrypt',
+      'php7.0-mbstring',
+      'php7.0-mysql',
+      'php7.0-fpm',
+      'php7.0-cli',
+      'php7.0-curl',
+      'php7.0-gd',
+      'php7.0-json',
+      'php7.0-intl',
       'php-pear',
-      'php5-mysqlnd',
-      'php5-pgsql',
-      'php5-readline',
-      'php5-sqlite',
-      'php-xml-parser',
+      'php7.0-pgsql',
+      'php7.0-opcacge',
+      'php7.0-readline',
+      'php7.0-sqlite',
+      'php7.0-xml',
+      'php7.0-zip',
     ]
 
     class { 'phpfpm':
       process_max => 2,
       log_level   => 'warning',
-      error_log   => '/var/log/php5-fpm.log',
+      error_log   => '/var/log/php7.0-fpm.log',
     }->
 
     package { $optionnal_pkgs:
@@ -34,7 +34,7 @@ class ns9_phpfpm{
       pm                      => 'static',
       pm_max_children         => 2,
       pm_max_requests         => 512,
-      listen                  => '/var/run/php5-fpm.sock',
+      listen                  => '/var/run/php7.0-fpm.sock',
       listen_mode             => '0660',
       listen_owner            => 'www-data',
       listen_group            => 'www-data',
@@ -49,11 +49,15 @@ class ns9_phpfpm{
       },
     }->
 
-    file{ '/etc/php5/fpm/php.ini' :
+    file{ '/etc/php/7.0/fpm/php.ini' :
       ensure  =>  present,
       source  =>  'puppet:///modules/ns9_phpfpm/php.ini',
     }
 
+    file{ '/etc/php/7.0/cli/php.ini' :
+      ensure  =>  present,
+      source  =>  'puppet:///modules/ns9_phpfpm/php.ini',
+    }
 
   # install composer
   exec { 'install composer':

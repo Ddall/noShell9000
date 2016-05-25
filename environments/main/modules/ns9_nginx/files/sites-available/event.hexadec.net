@@ -6,33 +6,22 @@ server {
 }
 
 server {
-	listen 443 ssl;
-	server_name event.hexadec.net;
+    listen 443 ssl;
+    server_name event.hexadec.net;
 
-	ssl_certificate /etc/nginx/ssl/event.hexadec.net.crt;
-	ssl_certificate_key /etc/nginx/ssl/event.hexadec.net.key;
+    ssl_certificate /etc/nginx/ssl/event.hexadec.net.crt;
+    ssl_certificate_key /etc/nginx/ssl/event.hexadec.net.key;
 
-	error_log /var/log/nginx/event.hexadec.net-error.log;
-	location / {
-		# try to serve file directly, fallback to app.php
-		try_files $uri /app.php$is_args$args;
-	}
-	
-	root /home/web/event/web;
+    error_log /var/log/nginx/event.hexadec.net-error.log;
+    location / {
+        # try to serve file directly, fallback to app.php
+        try_files $uri /app.php$is_args$args;
+    }
 
-	# PROD
-	location ~ ^/app\.php(/|$) {
-		fastcgi_pass php-handler;
-		fastcgi_split_path_info ^(.+\.php)(/.*)$;
-		include fastcgi_params;
+    root /home/web/event/web;
 
-		fastcgi_param  SCRIPT_FILENAME  $realpath_root$fastcgi_script_name;
-		fastcgi_param DOCUMENT_ROOT $realpath_root;
-
-		internal;
-	}
-
-	location ~ ^/app_dev\.php(/|$) {
+    # PROD
+    location ~ ^/app\.php(/|$) {
         fastcgi_pass php-handler;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         include fastcgi_params;
@@ -41,6 +30,16 @@ server {
         fastcgi_param DOCUMENT_ROOT $realpath_root;
 
         internal;
+    }
+    
+    location ~ ^/app_dev\.php(/|$) {
+        fastcgi_pass php-handler;
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi_params;
+
+        fastcgi_param  SCRIPT_FILENAME  $realpath_root$fastcgi_script_name;
+        fastcgi_param DOCUMENT_ROOT $realpath_root;
+
     }
 
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;

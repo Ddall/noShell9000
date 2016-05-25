@@ -32,7 +32,7 @@ server {
 		internal;
 	}
 
-    location ~ ^/(app_dev|config)\.php(/|$) {
+	location ~ ^/app_dev\.php(/|$) {
         fastcgi_pass php-handler;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         include fastcgi_params;

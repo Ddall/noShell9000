@@ -10,6 +10,7 @@ class ns9_phpfpm{
       'php7.0-gd',
       'php7.0-json',
       'php7.0-intl',
+      'php-memcached',
       'php-pear',
       'php7.0-pgsql',
       'php7.0-opcache',

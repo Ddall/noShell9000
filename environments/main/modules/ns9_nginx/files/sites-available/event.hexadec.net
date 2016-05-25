@@ -20,18 +20,8 @@ server {
 
     root /home/web/event/web;
 
-    location ~ ^/app_dev\.php(/|$) {
-        fastcgi_pass php-handler;
-        fastcgi_split_path_info ^(.+\.php)(/.*)$;
-        include fastcgi_params;
-
-        fastcgi_param  SCRIPT_FILENAME  $realpath_root$fastcgi_script_name;
-        fastcgi_param DOCUMENT_ROOT $realpath_root;
-
-    }
-
     # PROD
-    location ~ ^/app\.php(/|$) {
+    location ~ ^/(app|app_dev|config)\.php(/|$) {
         fastcgi_pass php-handler;
         fastcgi_split_path_info ^(.+\.php)(/.*)$;
         include fastcgi_params;

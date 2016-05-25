@@ -12,7 +12,7 @@ class ns9_phpfpm{
       'php7.0-intl',
       'php-pear',
       'php7.0-pgsql',
-      'php7.0-opcacge',
+      'php7.0-opcache',
       'php7.0-readline',
       'php7.0-sqlite',
       'php7.0-xml',

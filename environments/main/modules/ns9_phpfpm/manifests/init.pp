@@ -34,7 +34,7 @@ class ns9_phpfpm{
       pm                      => 'static',
       pm_max_children         => 2,
       pm_max_requests         => 512,
-      listen                  => '/var/run/php7.0-fpm.sock',
+      listen                  => '/var/run/php/php7.0-fpm.sock',
       listen_mode             => '0660',
       listen_owner            => 'www-data',
       listen_group            => 'www-data',

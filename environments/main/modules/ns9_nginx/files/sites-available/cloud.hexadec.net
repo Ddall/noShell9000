@@ -12,8 +12,8 @@ server {
     listen 443 ssl;
     server_name cloud.hexadec.net;
 
-    ssl_certificate /etc/letsencrypt/live/cloud.hexadec.net/cert.crt;
-    ssl_certificate_key /etc/letsencrypt/live/cloud.hexadec.net/privkey.key;
+    ssl_certificate /etc/letsencrypt/live/cloud.hexadec.net/cert.pem;
+    ssl_certificate_key /etc/letsencrypt/live/cloud.hexadec.net/privkey.pem;
 
     error_log /var/log/nginx/cloud.hexadec.net-error.log;
 

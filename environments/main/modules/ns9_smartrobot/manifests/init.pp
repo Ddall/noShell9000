@@ -15,12 +15,12 @@ class ns9_smartrobot{
 
 
   #SSL
-  exec { 'make ssl cert for smartbot.hexadec.net':
-    cwd     =>  "/etc/nginx",
-    command =>  '/usr/bin/openssl req -x509 -nodes -days 730 -newkey rsa:2048 -keyout /etc/nginx/ssl/smartbot.hexadec.net.key -out /etc/nginx/ssl/smartbot.hexadec.net.crt -subj "/C=FR/ST=FRANCE/L=INTERNET/O=DDX/OU=IT Department/CN=smartbot.hexadec.net"',
-    creates =>  "/etc/nginx/ssl/smartbot.hexadec.net.crt",
-    notify  =>  Service['nginx'], # Restart service when file is changed
-  }
+  # exec { 'make ssl cert for smartbot.hexadec.net':
+  #   cwd     =>  "/etc/nginx",
+  #   command =>  '/usr/bin/openssl req -x509 -nodes -days 730 -newkey rsa:2048 -keyout /etc/nginx/ssl/smartbot.hexadec.net.key -out /etc/nginx/ssl/smartbot.hexadec.net.crt -subj "/C=FR/ST=FRANCE/L=INTERNET/O=DDX/OU=IT Department/CN=smartbot.hexadec.net"',
+  #   creates =>  "/etc/nginx/ssl/smartbot.hexadec.net.crt",
+  #   notify  =>  Service['nginx'], # Restart service when file is changed
+  # }
 
   cron{'smartbot cron':
     ensure => present,

@@ -38,12 +38,12 @@ class ns9_owncloud{
   }
 
   #SSL
-  exec { 'make ssl cert for cloud.hexadec.net':
-    cwd     =>  "/etc/nginx",
-    command =>  '/usr/bin/openssl req -x509 -nodes -days 730 -newkey rsa:2048 -keyout /etc/nginx/ssl/cloud.hexadec.net.key -out /etc/nginx/ssl/cloud.hexadec.net.crt -subj "/C=FR/ST=FRANCE/L=INTERNET/O=DDX/OU=IT Department/CN=cloud.hexadec.net"',
-    creates =>  "/etc/nginx/ssl/cloud.hexadec.net.crt",
-    notify  =>  Service['nginx'], # Restart service when file is changed
-  }
+  # exec { 'make ssl cert for cloud.hexadec.net':
+  #   cwd     =>  "/etc/nginx",
+  #   command =>  '/usr/bin/openssl req -x509 -nodes -days 730 -newkey rsa:2048 -keyout /etc/nginx/ssl/cloud.hexadec.net.key -out /etc/nginx/ssl/cloud.hexadec.net.crt -subj "/C=FR/ST=FRANCE/L=INTERNET/O=DDX/OU=IT Department/CN=cloud.hexadec.net"',
+  #   creates =>  "/etc/nginx/ssl/cloud.hexadec.net.crt",
+  #   notify  =>  Service['nginx'], # Restart service when file is changed
+  # }
 
   cron{'owncloud cron':
     ensure => present,

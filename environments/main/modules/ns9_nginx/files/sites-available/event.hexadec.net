@@ -9,8 +9,8 @@ server {
     listen 443 ssl;
     server_name event.hexadec.net;
 
-    ssl_certificate /etc/nginx/ssl/event.hexadec.net.crt;
-    ssl_certificate_key /etc/nginx/ssl/event.hexadec.net.key;
+    ssl_certificate /etc/letsencrypt/live/event.hexadec.net/cert.crt;
+    ssl_certificate_key /etc/letsencrypt/live/event.hexadec.net/privkey.key;
 
     error_log /var/log/nginx/event.hexadec.net-error.log;
     location / {

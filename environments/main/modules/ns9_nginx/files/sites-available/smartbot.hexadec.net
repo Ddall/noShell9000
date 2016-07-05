@@ -9,8 +9,8 @@ server {
 	listen 443 ssl;
 	server_name smartbot.hexadec.net;
 
-	ssl_certificate /etc/nginx/ssl/smartbot.hexadec.net.crt;
-	ssl_certificate_key /etc/nginx/ssl/smartbot.hexadec.net.key;
+	ssl_certificate /etc/letsencrypt/live/smartbot.hexadec.net/cert.crt;
+	ssl_certificate_key /etc/letsencrypt/live/smartbot.hexadec.net/privkey.key;
 
 	error_log /var/log/nginx/smartbot.hexadec.net-error.log;
 	location / {

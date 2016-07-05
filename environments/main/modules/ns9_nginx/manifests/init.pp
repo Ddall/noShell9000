@@ -21,12 +21,12 @@ class ns9_nginx{
     require => Package['nginx'],
     notify => Service['nginx'],
   }
-
-  file{ '/etc/nginx/ssl':
-    ensure  => directory,
-    owner   => 'root',
-    group   => 'root',
-  }
+  #
+  # file{ '/etc/nginx/ssl':
+  #   ensure  => directory,
+  #   owner   => 'root',
+  #   group   => 'root',
+  # }
 
   # WWW Root
   file{'/home/web':

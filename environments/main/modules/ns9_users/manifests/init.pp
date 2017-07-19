@@ -1,7 +1,6 @@
 class ns9_users{
 
   accounts::user { 'ddall':
-    sshkeys  => "ssh-rsa AAAA...",
     groups  => [
       'admin',
       'sudonopw',

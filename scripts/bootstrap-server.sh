@@ -7,7 +7,7 @@ sudo ssh-keygen -t rsa -b 2048 -N "" -f ~/.ssh/id_rsa
 passwd -l root
 
 #@docs:https://docs.puppetlabs.com/guides/install_puppet/install_debian_ubuntu.html
-cd /var/src
+cd /var/opt
 wget https://apt.puppetlabs.com/puppet-release-xenial.deb
 sudo dpkg -i puppetlabs-release-trusty.deb
 sudo apt-get update

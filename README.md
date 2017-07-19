@@ -4,7 +4,7 @@
 
 	Oh, hi there. :-)
 
-Simple script to bootstrap servers with Puppet masterless
+Simple toolbox to bootstrap and manage servers with Puppet through git
 ```bash
 wget https://raw.githubusercontent.com/Ddall/noShell9000/master/bootstrapPuppet.sh
 sudo bash bootstrapPuppet.sh

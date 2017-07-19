@@ -1,4 +1,4 @@
-class puppet {
+class ns9_puppet {
 
   package{'puppet':
     ensure => latest,

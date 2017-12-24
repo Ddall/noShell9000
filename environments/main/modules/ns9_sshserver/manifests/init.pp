@@ -5,7 +5,7 @@ class ns9_sshserver{
     group   =>  'root',
     mode    =>  '640',
     notify  =>  Service['ssh'],
-    source  =>  'puppet:///modules/sshserver/sshd_config'
+    source  =>  'puppet:///modules/ns9_sshserver/sshd_config'
   }
 
   service { 'ssh':

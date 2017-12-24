@@ -6,10 +6,11 @@ gem install librarian-puppet
 sudo ssh-keygen -t rsa -b 2048 -N "" -f ~/.ssh/id_rsa
 passwd -l root
 
+# xenial = 16.04
 #@docs:https://docs.puppetlabs.com/guides/install_puppet/install_debian_ubuntu.html
 cd /var/opt
 wget https://apt.puppetlabs.com/puppet-release-xenial.deb
-sudo dpkg -i puppetlabs-release-trusty.deb
+sudo dpkg -i puppetlabs-release-xenial.deb
 sudo apt-get update
 sudo apt-get install puppet -y
 

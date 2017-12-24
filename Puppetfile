@@ -1,4 +1,6 @@
 forge "https://forgeapi.puppetlabs.com"
 
-mod 'puppetlabs-accounts', '1.1.0'
-mod 'saz-sudo', '4.1.0'
+mod 'puppetlabs-accounts', '1.2.1'
+mod 'saz-sudo', '4.2.0'
+mod 'puppetlabs-apt', '4.4.1'
+mod 'puppet-unattended_upgrades', '3.1.0'
